@@ -1,6 +1,7 @@
 # Variables de Entorno
 ### ¿Qué son las variables de entorno?
-# COMPLETAR
+
+Las variables de entorno en Docker son valores que se pasan al contenedor en tiempo de ejecución para configurar su comportamiento sin modificar la imagen.
 
 ### Para crear un contenedor con variables de entorno
 
@@ -10,18 +11,22 @@ docker run -d --name <nombre contenedor> -e <nombre variable1>=<valor1> -e <nomb
 
 ### Crear un contenedor a partir de la imagen de nginx:alpine con las siguientes variables de entorno: username y role. Para la variable de entorno rol asignar el valor admin.
 
-# COMPLETAR
+```
+PS C:\Users\Jose> docker run -d --name prac3 -e username=jose -e role=admin nginx:alpine-perl
+```
+![Captura 1](prac1_jose_admin.png)
 
-# CAPTURA CON LA COMPROBACIÓN DE LA CREACIÓN DE LAS VARIABLES DE ENTORNO DEL CONTENEDOR ANTERIOR
 
 ### Crear un contenedor con la imagen de mysql, mapear todos los puertos
-# COMPLETAR
-
+```
+docker run -d --name mysql-contenedor -e MYSQL_ROOT_PASSWORD=123-Passw0rd -P mysql:latest
+```
 ### ¿El contenedor se está ejecutando?
-# COMPLETAR
+Sí
 
 ### Identificar el problema
-# COMPLETAR
+
+no hubo problema alguno 
 
 ### Para crear un contenedor con variables de entorno especificadas
 - Portabilidad: Las aplicaciones se vuelven más portátiles y pueden ser desplegadas en diferentes entornos (desarrollo, pruebas, producción) simplemente cambiando el archivo de variables de entorno.
@@ -31,4 +36,16 @@ docker run -d --name <nombre contenedor> -e <nombre variable1>=<valor1> -e <nomb
 - Control de Acceso: Los archivos de variables de entorno pueden ser gestionados con permisos específicos, limitando quién puede ver o modificar la configuración sensible.
 
 ### ¿Qué bases de datos existen en el contenedor creado?
-# COMPLETAR
+```
+PS C:\Users\Jose> docker exec -it mysql-contenedor mysql -u root -p -e "SHOW DATABASES;"
+Enter password: 
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+PS C:\Users\Jose> 
+```
