@@ -35,4 +35,4 @@ INSERT INTO personas (nombre) VALUES ('Jose'), ('TuNombre');
 SELECT * FROM personas;
 ```
 ### Realizar un select *from personas
-![Imagen](personas.PNG)
+![Imagen](personas.png)
