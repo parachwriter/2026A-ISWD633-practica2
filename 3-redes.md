@@ -15,19 +15,19 @@ Las redes son un componente fundamental que permite la comunicación entre conte
 ### Crear una red de tipo bridge
 
 ```
-docker network create <nombre red> -d bridge
+PS C:\Users\Jose> docker network create red1 -d bridge
 ```
 
 ### Crear un contenedor vinculado a una red
 
 ```
-docker run -d --name <nombre contenedor> --network <nombre red> <nombre imagen>
+PS C:\Users\Jose> docker run -d --name cont1 --network red1 nginx:alpine-perl
 ```
 
 ### Para saber a qué red está conectado un contenedor
 
 ```
-docker inspect <nombre contenedor>
+PS C:\Users\Jose> docker network inspect red1
 ```
 
 ó
@@ -60,8 +60,13 @@ docker network ls
 
 # COLOCAR UNA CAPTURA DE LAS REDES EXISTENTES CREADAS
 
+![Captura 1](redes.png)
+
+
 # COLOCAR UNA(S) CAPTURAS(S) DE LOS CONTENEDORES CREADOS EN DONDE SE EVIDENCIE A QUÉ RED ESTÁN VINCULADOS
 
+
+![Captura 1](inspect.png)
 ### Para eliminar las redes creadas
 
 ```
